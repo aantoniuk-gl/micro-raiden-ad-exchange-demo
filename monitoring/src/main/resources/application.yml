@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: monitoring
+
+server:
+  port: 8081
+
+logging:
+  path: logs
+  level:
+    root: error
+    com.rubicon.crypto.publisher: debug
+  pattern:
+    console: "%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n"

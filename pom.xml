@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.rubicon</groupId>
+    <artifactId>crypto.parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>dsp</module>
+        <module>monitoring</module>
+        <module>ad-server</module>
+        <module>publisher</module>
+        <module>model</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.0.RELEASE</version>
+    </parent>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.google.openrtb</groupId>
+                <artifactId>openrtb-core</artifactId>
+                <version>1.5.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.microraiden</groupId>
+                <artifactId>microraiden-java</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>2.9.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.ethereum</groupId>
+                <artifactId>ethereumj-core</artifactId>
+                <version>1.4.5-RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>4.3.4</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.kocakosm/pitaya -->
+            <dependency>
+                <groupId>org.kocakosm</groupId>
+                <artifactId>pitaya</artifactId>
+                <version>0.4</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>ethereumj-core</id>
+            <name>ethereumj-core</name>
+            <url>https://dl.bintray.com/ethereum/maven/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>ethereumj-core</id>
+            <name>ethereumj-core</name>
+            <url>https://mvnrepository.com/artifact/org.ethereum/ethereumj-core</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+
+</project>
