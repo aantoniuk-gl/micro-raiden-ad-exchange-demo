@@ -25,7 +25,7 @@ git clone https://github.com/aantoniuk-gl/microraiden-java.git
 cd microraiden-java
 ./gradlew installDist    
 ``` 
-- install jar to local maven repo
+- install jar into local maven repo
 ```
 mvn install:install-file -Dfile=build/libs/microraiden-java.jar -DgroupId=org.microraiden -DartifactId=microraiden-java -Dversion=1.0.0 -Dpackaging=jar
 ```
@@ -34,12 +34,13 @@ We have deployed the [CustomToken](https://kovan.etherscan.io/address/0x0fc37342
 ## Demo installation
 - clone github repo
 ```
-git clone 
+git clone https://github.com/aantoniuk-gl/crypto-demo
 ```
 ## Start Demo
 ```
 ./start.sh
 ```
+When demo app is started all channels between Publisher and Ad-Exchange, Ad-Exchange and DSPs will be created.
 ## Run Publisher URL to see Ad
 ```
 http://localhost:8085
@@ -65,3 +66,4 @@ https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0x
 ```
 ./stop.sh
 ```
+When demo is stopped all channels between Publisher and Ad-Exchange, Ad-Exchange and DSPs will be closed.
