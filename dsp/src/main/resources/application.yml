@@ -5,7 +5,7 @@ spring:
 logging:
   level:
     root: error
-    com.rubicon.crypto.dsp: debug
+    org.microraiden.adexchange.demo.dsp: debug
   pattern.console: "%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n"
 
 server:

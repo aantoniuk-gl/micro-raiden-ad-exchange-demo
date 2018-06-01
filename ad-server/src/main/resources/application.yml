@@ -8,7 +8,7 @@ server:
 logging:
   level:
     root: error
-    com.rubicon.crypto.adserver: debug
+    org.microraiden.adexchange.demo.adserver: debug
   pattern:
     console: "%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n"
 

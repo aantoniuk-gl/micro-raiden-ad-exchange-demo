@@ -4,16 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.rubicon</groupId>
-    <artifactId>crypto.parent</artifactId>
+    <groupId>org.microraiden</groupId>
+    <artifactId>ad-exchange.demo</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
+        <module>model</module>
         <module>dsp</module>
         <module>monitoring</module>
         <module>ad-server</module>
         <module>publisher</module>
-        <module>model</module>
     </modules>
 
     <properties>
@@ -25,6 +25,13 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.0.0.RELEASE</version>
     </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>

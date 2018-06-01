@@ -1,4 +1,4 @@
-## About Crypto
+## About Micro Raiden Ad Exchange Demo 
 Short Demo based on real Ad-Exchange workflow shows capability to create micro-payment operations.
 There are several participants: 
 - Publisher  - 
@@ -34,20 +34,27 @@ We have deployed the [CustomToken](https://kovan.etherscan.io/address/0x0fc37342
 ## Demo installation
 - clone github repo
 ```
-git clone https://github.com/aantoniuk-gl/crypto-demo
+git clone https://github.com/aantoniuk-gl/micro-raiden-ad-exchange-demo
 ```
 ## Start Demo
 ```
 ./start.sh
 ```
-When demo app is started all channels between Publisher and Ad-Exchange, Ad-Exchange and DSPs will be created.
+## Create channels between DSPs and Ad-Server, Ad-Server and Publisher
+```
+./create_channels.sh
+```
 ## Run Publisher URL to see Ad
 ```
-http://localhost:8085
+http://localhost:8085/ad
+```
+## See detailed logs(last 50 lines)
+```
+./show_log.sh
 ```
 ## See business logs(last 50 lines)
 ```
-./show_log.sh
+./show_business_log.sh
 ```
 ## Kovan Etherscan - Ethereum explorer
 ### Smart contract 
@@ -57,11 +64,15 @@ https://kovan.etherscan.io/address/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7
 ### Publisher token balance
 https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0x392f18577685f82c812107b726f8152f026d9dcc
 ### Ad-Exchange token balance
-https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0xd69769e88bb98fbe92c557921fe81b61d3f580f5
+https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0xd6111d3a255a60e84bbebd15f13a03319d16393c
 ### DSP1 token balance
-https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0x9a317fa19cedcf6ca1217feffdd04eb782edd25f
-### DSp2 token balance
+https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0x1bfad454ad74680585210302f5e993abb68fa42e
+### DSP2 token balance
 https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0x5f971b6047d9291e83da6e9649dfb91925d6169e
+## Close channels between DSPs and Ad-Server, Ad-Server and Publisher
+```
+./close_channels.sh
+```
 ## Stop Demo
 ```
 ./stop.sh
