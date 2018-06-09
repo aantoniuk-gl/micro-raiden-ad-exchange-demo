@@ -4,9 +4,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Home page</title>
+    <title>Demo page</title>
 </head>
 <body>
-<img th:src="${content}"/>
+<h2>Demo page</h2>
+<table border="1">
+    <tr>
+        <th colspan=2>Banners</th>
+    </tr>
+    <tr>
+        <td>Here could be your Ad</td>
+        <td><img th:src="${content}" width="500" height="333"></td>
+    </tr>
+</table>
 </body>
 </html>

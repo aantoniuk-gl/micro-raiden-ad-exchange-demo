@@ -65,14 +65,14 @@ http://localhost:8085/ad
 https://kovan.etherscan.io/address/0x5832edf9Da129Aa13fdA0fBff93379d3ED8a4a93
 ### Token contract 
 https://kovan.etherscan.io/address/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7
-### Publisher token balance
-https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0x392f18577685f82c812107b726f8152f026d9dcc
-### Ad-Exchange token balance
-https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0xd6111d3a255a60e84bbebd15f13a03319d16393c
 ### DSP1 token balance
 https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0x1bfad454ad74680585210302f5e993abb68fa42e
 ### DSP2 token balance
 https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0x5f971b6047d9291e83da6e9649dfb91925d6169e
+### Ad-Exchange token balance
+https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0xd6111d3a255a60e84bbebd15f13a03319d16393c
+### Publisher token balance
+https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0x392f18577685f82c812107b726f8152f026d9dcc
 ## Close channels between DSPs and Ad-Exchange, Ad-Exchange and Publisher
 ```
 ./close_channels.sh
