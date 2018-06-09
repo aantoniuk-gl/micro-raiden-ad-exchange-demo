@@ -73,16 +73,6 @@ public class MicroraidenPublisherReceiver {
                 configuration.isDebugInfo());
     }
 
-    //    @Scheduled(initialDelay=5000, fixedDelay = Integer.MAX_VALUE)
-    private void createChannels() {
-        createChannelsToAdService();
-    }
-
-    //    @PreDestroy
-    private void destroy() {
-        closeAllChannels();
-    }
-
     public void createChannelsToAdService() {
         microraidenAdExchangeSender.createChannels(receiverWallet.getAccountID())
                                  .forEach(channel -> balanceProofStore.putBalanceProof(channel.getBlockNumber(), channel));
