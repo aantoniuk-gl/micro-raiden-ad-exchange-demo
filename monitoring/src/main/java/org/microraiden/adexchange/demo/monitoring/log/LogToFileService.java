@@ -18,6 +18,7 @@ public class LogToFileService implements LogService {
 
     @Override
     public void logBusiness(String system, String message) {
-        BUSINESS_LOGGER.info("{}: \"{}\"", system, message);
+        String msg = String.format("%10s: %s", system, message);
+        BUSINESS_LOGGER.info(msg);
     }
 }
