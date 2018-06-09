@@ -35,8 +35,7 @@ public class PaymentService {
         // update balance proof of Ad-Exchange from DSP
         adExchangeReceiver.saveBalanceProof(dspToAdExchangeChannelState);
 
-        monitoringService.logBusiness("Received " + price + " TKN from DSP(" +
-                dspToAdExchangeChannelState.getSenderId() + ")");
+        monitoringService.logBusiness("Received " + price + " TKN from DSP");
 
         // generate and send balance proof to publisher
         double newPrice = price - fee;
@@ -44,6 +43,7 @@ public class PaymentService {
 
         ChannelState adExchangeToPublisherChannelState = adExchangeSender.getChannelState(newBalance);
 
+        monitoringService.logBusiness("Got a fee in " + fee + " TNK");
         monitoringService.logBusiness("Sent " + newPrice + " TKN to Publisher");
         publisherReceiver.pay(adExchangeToPublisherChannelState);
 

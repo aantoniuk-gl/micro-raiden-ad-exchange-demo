@@ -28,7 +28,7 @@ public class PaymentService {
         // update balance proof of Publisher from Ad-Exchange
         publisherReceiver.saveBalanceProof(channelState);
 
-        monitoringService.logBusiness("Received " + price + " TKN from Ad-Exchange(" + channelState.getSenderId() + ")");
+        monitoringService.logBusiness("Received " + price + " TKN from Ad-Exchange");
         monitoringService.logBusiness("-------------------------------------------------------");
     }
 }
