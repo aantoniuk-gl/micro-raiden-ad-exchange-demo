@@ -1,6 +1,6 @@
 spring:
   application:
-    name: adServer
+    name: adExchange
 
 server:
   port: 8084
@@ -8,7 +8,7 @@ server:
 logging:
   level:
     root: error
-    org.microraiden.adexchange.demo.adserver: debug
+    org.microraiden.adexchange.demo.adexchange: debug
   pattern:
     console: "%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n"
 
@@ -39,5 +39,5 @@ ethereum:
 channel:
   deposit: 30
 
-ad-server:
+ad-exchange:
   fee: 1

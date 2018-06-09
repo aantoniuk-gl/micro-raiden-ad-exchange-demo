@@ -1,4 +1,4 @@
-package org.microraiden.adexchange.demo.adserver.service;
+package org.microraiden.adexchange.demo.adexchange.service;
 
 import java.util.Comparator;
 import java.util.List;
@@ -47,7 +47,7 @@ public class DspBidCollector {
     }
 
     public void sendWinNotification(String impId, String dspWinNotificationUrl) {
-        monitoringService.log("Win notification was sent From AdServer to DSP for impId=" + impId);
+        monitoringService.log("Win notification was sent From AdExchange to DSP for impId=" + impId);
 
         restTemplate.getForEntity(dspWinNotificationUrl, String.class);
     }

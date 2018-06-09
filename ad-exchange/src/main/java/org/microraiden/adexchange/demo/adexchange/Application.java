@@ -1,4 +1,4 @@
-package org.microraiden.adexchange.demo.adserver;
+package org.microraiden.adexchange.demo.adexchange;
 
 import java.util.Arrays;
 

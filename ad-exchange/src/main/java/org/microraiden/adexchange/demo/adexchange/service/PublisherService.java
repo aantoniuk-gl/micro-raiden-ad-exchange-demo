@@ -1,4 +1,4 @@
-package org.microraiden.adexchange.demo.adserver.service;
+package org.microraiden.adexchange.demo.adexchange.service;
 
 import org.microraiden.adexchange.demo.monitoring.ChannelState;
 import org.springframework.beans.factory.annotation.Value;

@@ -10,14 +10,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class MicroraidenAdServerSender {
+public class MicroraidenAdExchangeSender {
 
     private final RestTemplate restTemplate;
     private final List<String> dspUri;
 
-    public MicroraidenAdServerSender(
+    public MicroraidenAdExchangeSender(
             RestTemplate restTemplate,
-            @Value("${service.adServer.uri}") List<String> dspUri) {
+            @Value("${service.adExchange.uri}") List<String> dspUri) {
         this.restTemplate = restTemplate;
         this.dspUri = dspUri;
     }

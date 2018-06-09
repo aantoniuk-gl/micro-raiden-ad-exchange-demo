@@ -1,4 +1,4 @@
-package org.microraiden.adexchange.demo.adserver.service.microraiden;
+package org.microraiden.adexchange.demo.adexchange.service.microraiden;
 
 import java.math.BigInteger;
 
@@ -9,7 +9,7 @@ import org.microraiden.MessageSigner;
 import org.microraiden.Token;
 import org.microraiden.TransferChannel;
 import org.microraiden.Wallet;
-import org.microraiden.adexchange.demo.adserver.service.MonitoringService;
+import org.microraiden.adexchange.demo.adexchange.service.MonitoringService;
 import org.microraiden.adexchange.demo.monitoring.ChannelState;
 import org.microraiden.conf.Configuration;
 import org.microraiden.utils.Http;
@@ -18,7 +18,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MicroraidenAdServerReceiver {
+public class MicroraidenAdExchangeReceiver {
 
     private final MonitoringService monitoringService;
     private final BalanceProofStore balanceProofStore;
@@ -31,7 +31,7 @@ public class MicroraidenAdServerReceiver {
     private MessageSigner messageSigner;
 
     @Autowired
-    public MicroraidenAdServerReceiver(
+    public MicroraidenAdExchangeReceiver(
             MonitoringService monitoringService,
             BalanceProofStore balanceProofStore, MicroraidenDspSender microraidenDspSender, Configuration configuration,
             @Value("${ethereum.account.primaryKey}") String receiverPrimaryKey) {
@@ -123,7 +123,7 @@ public class MicroraidenAdServerReceiver {
         String logMsg = "dsp(" + channelState.getSenderId() +
                 ") closed a channel and sent " +
                 channelState.getBalance() +
-                " TKN to Ad-Server(" + receiverWallet.getAccountID() + ")";
+                " TKN to Ad-Exchange(" + receiverWallet.getAccountID() + ")";
         monitoringService.log(logMsg);
         monitoringService.logBusiness(logMsg);
     }

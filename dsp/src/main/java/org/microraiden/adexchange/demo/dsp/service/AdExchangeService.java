@@ -7,20 +7,20 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class AdServerService {
+public class AdExchangeService {
 
     private final RestTemplate restTemplate;
-    private final String adServerUri;
+    private final String adExchangeUri;
 
-    public AdServerService(
+    public AdExchangeService(
             RestTemplate restTemplate,
-            @Value("${service.adServer.uri}") String adServerUri) {
+            @Value("${service.adExchange.uri}") String adExchangeUri) {
         this.restTemplate = restTemplate;
-        this.adServerUri = adServerUri;
+        this.adExchangeUri = adExchangeUri;
     }
 
     public void pay(ChannelState channelState) {
         HttpEntity<ChannelState> request = new HttpEntity<>(channelState);
-        restTemplate.postForEntity(adServerUri + "/pay", request, String.class);
+        restTemplate.postForEntity(adExchangeUri + "/pay", request, String.class);
     }
 }

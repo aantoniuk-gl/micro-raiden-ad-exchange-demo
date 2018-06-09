@@ -8,7 +8,7 @@ server:
 service:
   monitoring:
     uri: "http://localhost:8081/"
-  adServer:
+  adExchange:
     uri: "http://localhost:8084/"
 
 logging:

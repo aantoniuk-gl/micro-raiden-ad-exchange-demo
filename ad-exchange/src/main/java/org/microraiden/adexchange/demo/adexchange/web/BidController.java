@@ -1,8 +1,8 @@
-package org.microraiden.adexchange.demo.adserver.web;
+package org.microraiden.adexchange.demo.adexchange.web;
 
 import com.google.openrtb.OpenRtb.BidResponse.SeatBid.Bid;
-import org.microraiden.adexchange.demo.adserver.service.DspBidCollector;
 
+import org.microraiden.adexchange.demo.adexchange.service.DspBidCollector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

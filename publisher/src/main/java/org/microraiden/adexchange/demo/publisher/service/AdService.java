@@ -13,25 +13,25 @@ public class AdService {
 
     private final MonitoringService monitoringService;
     private final RestTemplate restTemplate;
-    private final String adServerUri;
+    private final String adExchangeUri;
 
     public AdService(
             MonitoringService monitoringService,
             RestTemplate restTemplate,
-            @Value("${service.adServer.uri}") String adServerUri) {
+            @Value("${service.adExchange.uri}") String adExchangeUri) {
         this.monitoringService = monitoringService;
         this.restTemplate = restTemplate;
-        this.adServerUri = adServerUri;
+        this.adExchangeUri = adExchangeUri;
     }
 
     public String getContent() {
-        ResponseEntity<Bid> bidResponse = restTemplate.getForEntity(adServerUri + "/bid", Bid.class);
+        ResponseEntity<Bid> bidResponse = restTemplate.getForEntity(adExchangeUri + "/bid", Bid.class);
         Bid bid = bidResponse.getBody();
 
-        monitoringService.log("Bid with impId=" + bid.getImpid() + " was received from Ad-Server");
+        monitoringService.log("Bid with impId=" + bid.getImpid() + " was received from Ad-Exchange");
 
-        monitoringService.log("Win notification was sent to AdServer for impId=" + bid.getImpid());
-        sendWinNotificationToAdServer(bid.getImpid(), bid.getNurl());
+        monitoringService.log("Win notification was sent to AdExchange for impId=" + bid.getImpid());
+        sendWinNotificationToAdExchange(bid.getImpid(), bid.getNurl());
 
         monitoringService.log("Billing notification was sent to DSP for impId=" + bid.getImpid());
         sendBillingNotificationToDsp(bid.getBurl());
@@ -39,8 +39,8 @@ public class AdService {
         return bid.getIurl();
     }
 
-    private void sendWinNotificationToAdServer(String impId, String dspWinNotificationUrl) {
-        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(adServerUri + "/win")
+    private void sendWinNotificationToAdExchange(String impId, String dspWinNotificationUrl) {
+        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(adExchangeUri + "/win")
                                                            .queryParam("impId", impId)
                                                            .queryParam("dspWinUrl", dspWinNotificationUrl);
         restTemplate.getForEntity(builder.toUriString(), String.class);

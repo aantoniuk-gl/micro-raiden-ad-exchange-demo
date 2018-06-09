@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ad-exchange.demo.ad-server</artifactId>
+    <artifactId>ad-exchange.demo.ad-exchange</artifactId>
 
     <dependencies>
         <dependency>

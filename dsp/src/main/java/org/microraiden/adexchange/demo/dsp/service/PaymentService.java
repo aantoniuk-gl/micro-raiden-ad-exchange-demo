@@ -19,19 +19,19 @@ public class PaymentService {
     private final NotificationStorage notificationStorage;
     private final ImpressionStorage impressionStorage;
     private final MicroraidenDSPSender microraidenDSPSender;
-    private final AdServerService adServerService;
+    private final AdExchangeService adExchangeService;
     private final MonitoringService monitoringService;
 
     public PaymentService(
             NotificationStorage notificationStorage,
             ImpressionStorage impressionStorage,
             MicroraidenDSPSender microraidenDSPSender,
-            AdServerService adServerService,
+            AdExchangeService adExchangeService,
             MonitoringService monitoringService) {
         this.notificationStorage = notificationStorage;
         this.impressionStorage = impressionStorage;
         this.microraidenDSPSender = microraidenDSPSender;
-        this.adServerService = adServerService;
+        this.adExchangeService = adExchangeService;
         this.monitoringService = monitoringService;
     }
 
@@ -52,8 +52,8 @@ public class PaymentService {
         double newBalance = microraidenDSPSender.getChannelBalance() + price;
         ChannelState channelState = microraidenDSPSender.getChannelState(newBalance);
 
-        monitoringService.logBusiness("Sent " + price + " TKN to Ad-Server");
-        adServerService.pay(channelState);
+        monitoringService.logBusiness("Sent " + price + " TKN to Ad-Exchange");
+        adExchangeService.pay(channelState);
 
         microraidenDSPSender.updateChannelBalance(newBalance);
 

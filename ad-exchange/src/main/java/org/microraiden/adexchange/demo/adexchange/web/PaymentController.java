@@ -1,6 +1,6 @@
-package org.microraiden.adexchange.demo.adserver.web;
+package org.microraiden.adexchange.demo.adexchange.web;
 
-import org.microraiden.adexchange.demo.adserver.service.PaymentService;
+import org.microraiden.adexchange.demo.adexchange.service.PaymentService;
 import org.microraiden.adexchange.demo.monitoring.ChannelState;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

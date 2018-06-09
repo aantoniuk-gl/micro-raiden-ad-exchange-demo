@@ -25,10 +25,10 @@ public class PaymentService {
         // calculate payment's price
         double price = channelState.getBalance() - balanceProofStore.getBalanceProof(channelState.getBlockNumber()).getBalance();
 
-        // update balance proof of Publisher from Ad-Server
+        // update balance proof of Publisher from Ad-Exchange
         publisherReceiver.saveBalanceProof(channelState);
 
-        monitoringService.logBusiness("Received " + price + " TKN from Ad-Server(" + channelState.getSenderId() + ")");
+        monitoringService.logBusiness("Received " + price + " TKN from Ad-Exchange(" + channelState.getSenderId() + ")");
         monitoringService.logBusiness("-------------------------------------------------------");
     }
 }

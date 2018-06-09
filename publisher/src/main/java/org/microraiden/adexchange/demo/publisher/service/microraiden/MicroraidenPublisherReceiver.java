@@ -22,7 +22,7 @@ public class MicroraidenPublisherReceiver {
 
     private final MonitoringService monitoringService;
     private final BalanceProofStore balanceProofStore;
-    private final MicroraidenAdServerSender microraidenAdServerSender;
+    private final MicroraidenAdExchangeSender microraidenAdExchangeSender;
     private final Configuration configuration;
     private final String receiverPrimaryKey;
 
@@ -33,11 +33,11 @@ public class MicroraidenPublisherReceiver {
     @Autowired
     public MicroraidenPublisherReceiver(
             MonitoringService monitoringService,
-            BalanceProofStore balanceProofStore, MicroraidenAdServerSender microraidenAdServerSender, Configuration configuration,
+            BalanceProofStore balanceProofStore, MicroraidenAdExchangeSender microraidenAdExchangeSender, Configuration configuration,
             @Value("${ethereum.account.primaryKey}") String receiverPrimaryKey) {
         this.monitoringService = monitoringService;
         this.balanceProofStore = balanceProofStore;
-        this.microraidenAdServerSender = microraidenAdServerSender;
+        this.microraidenAdExchangeSender = microraidenAdExchangeSender;
         this.configuration = configuration;
         this.receiverPrimaryKey = receiverPrimaryKey;
     }
@@ -84,7 +84,7 @@ public class MicroraidenPublisherReceiver {
     }
 
     public void createChannelsToAdService() {
-        microraidenAdServerSender.createChannels(receiverWallet.getAccountID())
+        microraidenAdExchangeSender.createChannels(receiverWallet.getAccountID())
                                  .forEach(channel -> balanceProofStore.putBalanceProof(channel.getBlockNumber(), channel));
     }
 
@@ -115,7 +115,7 @@ public class MicroraidenPublisherReceiver {
 
         balanceProofStore.removeBalanceProof(blockNumber);
 
-        String logMsg = "Ad-Server(" + channelState.getSenderId() +
+        String logMsg = "Ad-Exchange(" + channelState.getSenderId() +
                 " closed a channel and sent " +
                 channelState.getBalance() +
                 " TKN to Publisher(" + receiverWallet.getAccountID() + ")";

@@ -2,7 +2,7 @@
 Short Demo based on real Ad-Exchange workflow shows capability to create micro-payment operations.
 There are several participants: 
 - Publisher  - 
-- Ad-Server  - 
+- Ad-Exchange  - 
 - Two DSPs   - 
 - Monitoring -  
 
@@ -40,7 +40,11 @@ git clone https://github.com/aantoniuk-gl/micro-raiden-ad-exchange-demo
 ```
 ./start.sh
 ```
-## Create channels between DSPs and Ad-Server, Ad-Server and Publisher
+## Check status of started services
+```
+./status.sh
+```
+## Create channels between DSPs and Ad-Exchange, Ad-Exchange and Publisher
 ```
 ./create_channels.sh
 ```
@@ -69,7 +73,7 @@ https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0x
 https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0x1bfad454ad74680585210302f5e993abb68fa42e
 ### DSP2 token balance
 https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0x5f971b6047d9291e83da6e9649dfb91925d6169e
-## Close channels between DSPs and Ad-Server, Ad-Server and Publisher
+## Close channels between DSPs and Ad-Exchange, Ad-Exchange and Publisher
 ```
 ./close_channels.sh
 ```

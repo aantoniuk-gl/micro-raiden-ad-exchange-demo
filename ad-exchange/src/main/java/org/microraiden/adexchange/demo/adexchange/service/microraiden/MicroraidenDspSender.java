@@ -1,4 +1,4 @@
-package org.microraiden.adexchange.demo.adserver.service.microraiden;
+package org.microraiden.adexchange.demo.adexchange.service.microraiden;
 
 import java.util.List;
 import java.util.stream.Collectors;

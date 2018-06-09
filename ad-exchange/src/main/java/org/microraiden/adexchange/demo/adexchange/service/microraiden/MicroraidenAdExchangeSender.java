@@ -1,4 +1,4 @@
-package org.microraiden.adexchange.demo.adserver.service.microraiden;
+package org.microraiden.adexchange.demo.adexchange.service.microraiden;
 
 import java.math.BigInteger;
 
@@ -9,7 +9,7 @@ import org.microraiden.MessageSigner;
 import org.microraiden.Token;
 import org.microraiden.TransferChannel;
 import org.microraiden.Wallet;
-import org.microraiden.adexchange.demo.adserver.service.MonitoringService;
+import org.microraiden.adexchange.demo.adexchange.service.MonitoringService;
 import org.microraiden.adexchange.demo.monitoring.ChannelState;
 import org.microraiden.conf.Configuration;
 import org.microraiden.utils.Http;
@@ -17,7 +17,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MicroraidenAdServerSender {
+public class MicroraidenAdExchangeSender {
 
     private final MonitoringService monitoringService;
     private final Configuration configuration;
@@ -31,7 +31,7 @@ public class MicroraidenAdServerSender {
     private TransferChannel transferChannel;
     private MessageSigner messageSigner;
 
-    public MicroraidenAdServerSender(
+    public MicroraidenAdExchangeSender(
             MonitoringService monitoringService,
             Configuration configuration,
             @Value("${ethereum.account.primaryKey}") String senderPrimaryKey,
@@ -80,7 +80,7 @@ public class MicroraidenAdServerSender {
         this.blockNumber = blockNumber;
         this.channelBalance = 0;
 
-        String logMsg = "Ad-Server(" + senderWallet.getAccountID() +
+        String logMsg = "Ad-Exchange(" + senderWallet.getAccountID() +
                 ") created a transfer channel to Publisher(" + receiverAccountId +
                 ") with deposit=" + deposit +
                 " in blockNumber=" + blockNumber;

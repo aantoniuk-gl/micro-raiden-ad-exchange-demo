@@ -12,7 +12,7 @@
         <module>model</module>
         <module>dsp</module>
         <module>monitoring</module>
-        <module>ad-server</module>
+        <module>ad-exchange</module>
         <module>publisher</module>
     </modules>
 

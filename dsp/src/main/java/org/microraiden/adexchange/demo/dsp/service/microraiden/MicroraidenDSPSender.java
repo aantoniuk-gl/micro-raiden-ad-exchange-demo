@@ -84,7 +84,7 @@ public class MicroraidenDSPSender {
         this.channelBalance = 0;
 
         String logMsg = appName + "(" + senderWallet.getAccountID() +
-                ") created a transfer channel to Ad-Server(" + receiverAccountId +
+                ") created a transfer channel to Ad-Exchange(" + receiverAccountId +
                 ") with deposit=" + deposit +
                 " in blockNumber=" + blockNumber;
         monitoringService.log(logMsg);
