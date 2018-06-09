@@ -31,7 +31,7 @@ public class PaymentService {
     public void pay(ChannelState dspToAdExchangeChannelState) {
         // calculate payment's price
         double price = dspToAdExchangeChannelState.getBalance() -
-                adExchangeReceiver.getChannelBalance(dspToAdExchangeChannelState.getBlockNumber());
+                adExchangeReceiver.getChannelBalance(dspToAdExchangeChannelState.getSenderId());
         // update balance proof of Ad-Exchange from DSP
         adExchangeReceiver.saveBalanceProof(dspToAdExchangeChannelState);
 
@@ -43,7 +43,7 @@ public class PaymentService {
 
         ChannelState adExchangeToPublisherChannelState = adExchangeSender.getChannelState(newBalance);
 
-        monitoringService.logBusiness("Got a fee in " + fee + " TNK");
+        monitoringService.logBusiness("Took a fee in " + fee + " TKN");
         monitoringService.logBusiness("Sent " + newPrice + " TKN to Publisher");
         publisherReceiver.pay(adExchangeToPublisherChannelState);
 

@@ -23,7 +23,7 @@ public class PaymentService {
 
     public void pay(ChannelState channelState) {
         // calculate payment's price
-        double price = channelState.getBalance() - balanceProofStore.getBalanceProof(channelState.getBlockNumber()).getBalance();
+        double price = channelState.getBalance() - balanceProofStore.getBalanceProof(channelState.getSenderId()).getBalance();
 
         // update balance proof of Publisher from Ad-Exchange
         publisherReceiver.saveBalanceProof(channelState);

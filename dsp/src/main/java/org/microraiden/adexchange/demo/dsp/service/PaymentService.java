@@ -35,7 +35,7 @@ public class PaymentService {
         this.monitoringService = monitoringService;
     }
 
-    @Scheduled(fixedDelay = 5000)
+    @Scheduled(fixedDelay = 1000)
     public void schedulePayment() {
         Set<String> winNotifications = notificationStorage.getAllWinNotifications();
 

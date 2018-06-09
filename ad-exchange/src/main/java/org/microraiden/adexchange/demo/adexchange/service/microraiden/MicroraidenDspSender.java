@@ -24,6 +24,7 @@ public class MicroraidenDspSender {
 
     public List<ChannelState> createChannels(String receiverId) {
         return dspUri.stream()
+                     .parallel()
                      .map(dspUri -> createChannel(dspUri, receiverId))
                      .collect(Collectors.toList());
     }

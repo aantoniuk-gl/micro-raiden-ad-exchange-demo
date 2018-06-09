@@ -75,24 +75,24 @@ public class MicroraidenPublisherReceiver {
 
     public void createChannelsToAdService() {
         microraidenAdExchangeSender.createChannels(receiverWallet.getAccountID())
-                                 .forEach(channel -> balanceProofStore.putBalanceProof(channel.getBlockNumber(), channel));
+                                 .forEach(channel -> balanceProofStore.putBalanceProof(channel.getSenderId(), channel));
     }
 
     public void saveBalanceProof(ChannelState channelState) {
-        balanceProofStore.putBalanceProof(channelState.getBlockNumber(), channelState);
+        balanceProofStore.putBalanceProof(channelState.getSenderId(), channelState);
     }
 
     public void closeAllChannels() {
         balanceProofStore.getAllBalanceProof().forEach(e -> closeChannel(e.getKey()));
     }
 
-    private void closeChannel(String blockNumber) {
-        ChannelState channelState = balanceProofStore.getBalanceProof(blockNumber);
+    private void closeChannel(String senderId) {
+        ChannelState channelState = balanceProofStore.getBalanceProof(senderId);
         byte[] closingMsgHashSig = messageSigner.genClosingMsgHashSig(
                 receiverWallet,
                 channelState.getSenderId(),
                 configuration.getChannelAddr(),
-                blockNumber,
+                channelState.getBlockNumber(),
                 channelState.getBalance().toString());
 
         transferChannel.closeChannelCooperatively(
@@ -100,10 +100,10 @@ public class MicroraidenPublisherReceiver {
                 receiverWallet.getAccountID(),
                 channelState.getBalanceProof(),
                 closingMsgHashSig,
-                blockNumber,
+                channelState.getBlockNumber(),
                 channelState.getBalance().toString());
 
-        balanceProofStore.removeBalanceProof(blockNumber);
+        balanceProofStore.removeBalanceProof(senderId);
 
         String logMsg = "Ad-Exchange(" + channelState.getSenderId() +
                 " closed a channel and sent " +
