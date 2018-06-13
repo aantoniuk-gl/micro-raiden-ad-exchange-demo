@@ -29,7 +29,7 @@ public class ResponseBuilder {
         Bid bid = Bid.newBuilder()
                      .setId(UUID.randomUUID().toString())
                      .setImpid(impId)
-                     .setPrice(ThreadLocalRandom.current().nextInt(2, 5))
+                     .setPrice(ThreadLocalRandom.current().nextInt(2, 6))
                      .setIurl("http://localhost:" + port + "/" + appName + ".png")
                      .setNurl("http://localhost:" + port + "/win/" + impId)
                      .setBurl("http://localhost:" + port + "/billing/" + impId)
