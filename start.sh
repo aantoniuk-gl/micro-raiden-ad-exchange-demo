@@ -19,7 +19,7 @@ java -jar ad-exchange/target/ad-exchange.demo.ad-exchange-1.0-SNAPSHOT.jar --ser
 sleep 10
 
 #Publisher
-java -jar publisher/target/ad-exchange.demo.publisher-1.0-SNAPSHOT.jar --server.port=8085 --ethereum.account.primaryKey=26799b5d646ff1e736185507cde006e9d2b8ea64a519e97b3cca34b448c88ad9 &
+java -jar publisher/target/ad-exchange.demo.publisher-1.0-SNAPSHOT.jar --server.port=8085 --ethereum.account.primaryKey=30f22909521a89eeb027dd948f85f5e8e642d36e13f00b7ae93e72f849b1a78c &
 sleep 10
 
 ./status.sh

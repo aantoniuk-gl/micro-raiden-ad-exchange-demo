@@ -72,7 +72,7 @@ https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0x
 ### Ad-Exchange token balance
 https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0xd6111d3a255a60e84bbebd15f13a03319d16393c
 ### Publisher token balance
-https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0x392f18577685f82c812107b726f8152f026d9dcc
+https://kovan.etherscan.io/token/0x0fc373426c87f555715e6fe673b07fe9e7f0e6e7?a=0x8fa6f0a177553ac85d967c320f44e4990dbf8594
 ## Close channels between DSPs and Ad-Exchange, Ad-Exchange and Publisher
 ```
 ./close_channels.sh
